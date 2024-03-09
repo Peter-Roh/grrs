@@ -15,3 +15,16 @@ anyhow = "1.0.80"
 assert_cmd = "2.0.14"
 predicates = "3.1.0"
 assert_fs = "1.1.1"
+
+[lints.clippy]
+enum_glob_use = "deny"
+unwrap_used = "deny"
+nursery = "deny"
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
